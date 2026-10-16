@@ -43,6 +43,6 @@ test_outlined_or_raster_text_does_not_pass_editability (test_typography.Typograp
 test_same_role_measured_styles_pass (test_typography.TypographyTests.test_same_role_measured_styles_pass) ... ok
 
 ----------------------------------------------------------------------
-Ran 43 tests in 2.244s
+Ran 43 tests in 2.269s
 
 OK

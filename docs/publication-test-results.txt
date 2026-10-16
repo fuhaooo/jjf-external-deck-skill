@@ -9,8 +9,17 @@ test_remote_verification_matches (test_publication.PublicationTests.test_remote_
 test_same_account_permitted (test_publication.PublicationTests.test_same_account_permitted) ... ok
 test_valid_repo_identity (test_publication.PublicationTests.test_valid_repo_identity) ... ok
 test_visibility_is_explicit (test_publication.PublicationTests.test_visibility_is_explicit) ... ok
+test_check_mode_is_read_only_and_fails_on_drift (test_release_metadata.ReleaseMetadataTests.test_check_mode_is_read_only_and_fails_on_drift) ... ok
+test_consistent_package_metadata_passes (test_release_metadata.ReleaseMetadataTests.test_consistent_package_metadata_passes) ... ok
+test_current_reports_require_matching_version (test_release_metadata.ReleaseMetadataTests.test_current_reports_require_matching_version) ... ok
+test_historical_versions_are_allowed (test_release_metadata.ReleaseMetadataTests.test_historical_versions_are_allowed) ... ok
+test_missing_skill_version_is_rejected (test_release_metadata.ReleaseMetadataTests.test_missing_skill_version_is_rejected) ... ok
+test_rights_must_match_exact_bytes (test_release_metadata.ReleaseMetadataTests.test_rights_must_match_exact_bytes) ... ok
+test_stale_overview_titles_are_rejected (test_release_metadata.ReleaseMetadataTests.test_stale_overview_titles_are_rejected) ... ok
+test_sync_changes_only_canonical_copies (test_release_metadata.ReleaseMetadataTests.test_sync_changes_only_canonical_copies) ... ok
+test_version_drift_and_invalid_canonical_version_are_rejected (test_release_metadata.ReleaseMetadataTests.test_version_drift_and_invalid_canonical_version_are_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 0.218s
+Ran 20 tests in 0.442s
 
 OK

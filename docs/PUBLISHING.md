@@ -6,6 +6,30 @@
 
 本包默认发布目标为 `fuhaooo/jjf-external-deck-skill`。README 已按该名称编写安装命令。选择其他名称时，必须先同步更新 README 并重新审阅文件清单；辅助脚本会检查安装命令是否包含目标仓库名。
 
+## 更新已有仓库
+
+日常更新保留 `skills/jjf-external-deck` 这条安装路径；不用重新建仓库或执行首次发布脚本。先检查 Git 状态和 origin，比较远端历史，再按已授权范围正常提交和推送。
+
+根 `VERSION` 是发行版本的唯一来源，`NOTICE.md` 是使用范围的权威原文。审核修改根文件和 CHANGELOG 后，先运行：
+
+```bash
+python -m unittest discover -s skills/jjf-external-deck/tests -v
+python -m unittest discover -s tests -v
+```
+
+更新真实验证结果及两份当前验证报告的版本，再同步安装包并只读核对：
+
+```bash
+python scripts/sync_package_metadata.py
+python scripts/sync_package_metadata.py --check
+```
+
+同步器只复制 VERSION/NOTICE，不改 README、验证报告或文件校验值；检查到过期报告时返回非零。概览标题不写固定版本号，历史版本留在 CHANGELOG 和有上下文的审查记录中。Skill 内的 VERSION 可随单独安装复制，不能只更新根目录而漏掉安装包。
+
+完成内容审阅后依次更新 Skill 的 MANIFEST.sha256 和根 REPOSITORY.sha256，再执行 `python scripts/check_release.py`。该检查会拒绝版本漂移、旧概览标题、使用范围或验证报告不一致。校验值只涵盖已审阅的公开文件，不能为消除报错直接接纳未知文件。
+
+通过后按明确清单暂存、审阅差异、正常 commit 和 `git push origin main`；不强推。回读远端 main、根/Skill VERSION 和子目录 README，与本地一致才报告完成。
+
 ## 创建新的远程仓库（WSL / Linux / macOS / Windows）
 
 先将完整发布包解压，进入包含 README.md、scripts/、skills/ 的仓库根目录。需要 Git、Python 3.10+ 和 GitHub CLI；请按 [GitHub CLI 官方安装说明](https://cli.github.com/) 安装。

@@ -8,6 +8,8 @@
 
 [English](README.en.md) · [安装](#安装) · [使用示例](#使用示例) · [图片转可编辑-ppt](#图片转可编辑-ppt) · [维护与发布](docs/PUBLISHING.md)
 
+**发行版本**：[VERSION](VERSION) · [更新记录](CHANGELOG.md) · [Skill 包入口](skills/jjf-external-deck/README.md) · [维护文档](docs/README.md)
+
 > 统一品牌，不重复模板。每页有明确主题和视觉重点；好看的 PNG 不等于可编辑的 PPT。
 >
 > **这是 Agent Skill，不是独立生图软件、在线 PPT 网站或图片转换引擎。**安装后，需要在具备相应图片、文件、终端及可选 Canva 工具的 Agent 环境中运行。
@@ -37,13 +39,13 @@ JJF 综合品牌介绍、面向政府／园区／集团的 OPC 生态合作方�
 
 *编辑式三联画是正向审美参考之一，不是全套固定模板。上图是历史 AI 生成示意，不证明真实活动、客户或空间；其中旧 Logo 和文字不能作为最终资产或事实母版。正式图标首选 `assets/logo/jjf-logo-primary.svg`，不支持SVG时用原PNG。更多正例、候选与反例见 [参考图索引](skills/jjf-external-deck/assets/references/index.json)。*
 
-## v1.0.3：拆解后的标签一致性
+## 拆解后的标签一致性
 
 拆解后按语义角色统一页码、章节、网址、底部说明的中英文字体、字号、字重、间距和锚点，不照抄 AI 生图的字体缺陷。所有页面 worker 共用一份[文字样式合同](skills/jjf-external-deck/templates/typography-contract.json)，组装及 Canva 保存后分别验收；封面层级和用户指定参考优先。
 
 新增[文字一致性审计](skills/jjf-external-deck/references/typography-consistency.md)：检查真实提取的属性，缺字体信息返回 unknown。Canva 接口未开放字体家族或字距时，不能宣称已经统一，也不能静默把原生文字换成图片。
 
-## v1.0.2 补强
+## 品牌资产与局部修订
 
 - 收录三种官方SVG：绿色主标、透明白标、黑底白标，并保留原PNG兼容版；[查看用途与来源](skills/jjf-external-deck/assets/logo/README.md)。
 - 增加“修改现有Canva”路线：按参考页统一品牌区、沿用已有直接修改授权、自动纠正确定错字，保存后核对其他对象未变。
@@ -216,7 +218,7 @@ python3 skills/jjf-external-deck/scripts/deckctl.py validate --project ../my-jjf
 python3 skills/jjf-external-deck/scripts/deckctl.py --help
 ```
 
-填写 `content-lock.json` 的精确文案并获得真实审批后，使用 `lock-content`、`register-preview`、`approve-preview` 和 `handoff` 记录过程。详见 [Skill 使用说明](skills/jjf-external-deck/README.md)。不要复制假的审批话术骗过工具；`handoff` 只输出交接包，并明确标记 `conversion_executed=false`。
+填写 `content-lock.json` 的精确文案并获得真实审批后，使用 `lock-content`、`register-preview`、`approve-preview` 和 `handoff` 记录过程。完整参数见 [本地项目命令](skills/jjf-external-deck/references/local-tools.md)。不要复制假的审批话术骗过工具；`handoff` 只输出交接包，并明确标记 `conversion_executed=false`。
 
 `init`目前以OPC19作为引导模板；其他受众应先按叙事预设替换内容锁页纲，再执行`lock-content`，不应直接套19页。
 
@@ -224,23 +226,30 @@ python3 skills/jjf-external-deck/scripts/deckctl.py --help
 
 ```text
 jjf-external-deck-skill/
-├── README.md / README.en.md
-├── NOTICE.md                      # 品牌、参考图与授权边界
-├── docs/                          # 发布说明、隐私与验证说明
-├── scripts/                       # 仓库检查与 GitHub 发布辅助
-├── tests/                         # 离线发布保护测试
+├── README.md / README.en.md        # 安装、使用和仓库导航
+├── VERSION / CHANGELOG.md          # 当前版本的唯一来源与历史变更
+├── NOTICE.md                      # 使用范围的权威原文
+├── docs/                          # 维护文档入口、隐私、验证和检查记录
+├── scripts/                       # 元数据同步、发布检查与 GitHub 发布辅助
+├── tests/                         # 发布与版本一致性测试
 ├── requirements*.txt
+├── REPOSITORY.sha256               # 仓库文件校验清单
 └── skills/
-    └── jjf-external-deck/
+    └── jjf-external-deck/          # 唯一可安装的 Skill 包
+        ├── README.md              # 简洁包入口，详细命令转入 references
+        ├── VERSION / NOTICE.md    # 从根目录同步，安装后也可核对
         ├── SKILL.md               # Agent 入口
         ├── agents/openai.yaml
         ├── assets/                # 正式 Logo、tokens、带状态标签的参考图
         ├── references/            # 叙事、视觉、制作流程、转换和 QA
         ├── prompts/               # 单页生成、改稿与交接模板
         ├── templates/             # OPC19、预算、证据与版本模板
-        ├── scripts/               # deckctl、PPTX 初筛、本地安装
+        ├── scripts/               # 项目管理、结构/文字检查、本地安装
+        ├── MANIFEST.sha256        # 相对本安装包的文件校验清单
         └── tests/                 # 核心测试与待执行行为场景
 ```
+
+仓库根目录负责安装与维护说明，Skill 子目录负责可独立安装的运行资料；两者使用同一发行版本。概览标题不再硬编码版本号，版本变化集中记录在 `CHANGELOG.md`。
 
 ## 更新与卸载
 
@@ -257,7 +266,7 @@ python -m unittest discover -s tests -v
 python scripts/check_release.py
 ```
 
-当前分发包包含 43 项核心脚本/品牌资产/文字一致性测试和 11 项离线发布保护测试；本地结果见 [验证说明](docs/VERIFICATION.md)。
+当前分发包包含 43 项核心脚本/品牌资产/文字一致性测试和 20 项离线发布/版本一致性测试；本地结果见 [验证说明](docs/VERIFICATION.md)。发布检查会拒绝根目录与安装包版本、概览标题及当前验证报告不一致的情况。
 
 **尚未作为本版本端到端测试完成：**新 Agent 会话行为回归、真实 19 页转换、各 Agent 全功能兼容性、Canva 导入保真。单元测试通过不等于图片审美或外部服务链路通过；本仓库也不是已经制作完成的可编辑 Deck。
 

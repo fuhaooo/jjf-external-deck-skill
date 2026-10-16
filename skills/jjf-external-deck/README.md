@@ -1,82 +1,52 @@
-# JJF External Deck Skill v1.0.1
+<p><img src="assets/logo/jjf-logo-master.png" alt="JJF official logo" width="72" /></p>
 
-面向JJF AI Craft Labs对外宣传：品牌介绍、OPC生态方案、企业FDE、AI培训、开发者社区、海外活动与合作Deck。入口`SKILL.md`；详细规范按需加载。
+# JJF External Deck
 
-**状态**：本地Skill包已创建；脚本测试见`tests/verification-report.json`。指定转换器集成已经按实际文档编写，但未在本轮完成真实PPT转换或Canva导入。它不是无需工具即可运行的万能生图程序。
+[安装包版本](VERSION) · [Agent 入口](SKILL.md) · [项目命令](references/local-tools.md) · [品牌资产](assets/logo/README.md) · [使用范围](NOTICE.md)
 
-## 安装
+这是可独立安装的 JJF AI Craft Labs Skill 包，用于品牌介绍、OPC 生态方案、企业 FDE、AI 培训、开发者社区与海外活动 Deck。安装包与仓库使用同一发行版本。
 
-本文件命令以当前工作目录为本 Skill 根目录为前提；从仓库根目录先进入 `skills/jjf-external-deck`。仓库级一键安装说明见顶层 README。
+## 从这里开始
 
-解压后将整个`jjf-external-deck`文件夹放入Codex项目的`.agents/skills/`或用户目录`~/.agents/skills/`。必须复制整目录，包括Logo、references和templates；只贴SKILL.md会丢掉品牌与工具文件。
+- 使用者：安装后以 `$jjf-external-deck` 调用；完整安装方式见[仓库安装说明](https://github.com/fuhaooo/jjf-external-deck-skill#安装)。
+- Agent：读取 [SKILL.md](SKILL.md)，再按任务加载相关参考文档。
+- 手动管理项目：查看[本地项目命令](references/local-tools.md)，将 Deck 项目放在 Skill 目录之外。
+- 检查版本：读取本目录的 [VERSION](VERSION)。它随安装包复制，由仓库根 `VERSION` 同步生成。
 
-可在解压目录运行（Python脚本只复制本地文件，不下载依赖、不覆盖已有版本）：
+## 包含的工作流程
+
+1. 依据真实资料确定受众、叙事、页序与精确文案。
+2. 使用官方 SVG Logo 和黑绿品牌系统，逐页选择构图和视觉重点。
+3. 将已批准图片交给独立的 `image-to-editable-ppt` Skill，验收原生文字、简单结构和独立视觉素材。
+4. 对页码、章节、网址等重复标签共用文字样式合同，拆解后及 Canva 保存后检查一致性。
+5. 修改已有 Canva 时备份并局部编辑，保护其他对象、已有页面及用户改动。
+
+图片生成、OCR、转换器和 Canva 仍需实际运行环境提供相应工具与权限。本包不自动安装远程依赖或开通服务；本地检查不代表完整转换或 Canva 保真验收通过。普通文字保留原生可编辑能力；工具不能设置的字体属性须明确报告。
+
+## 目录导航
+
+| 路径 | 用途 |
+|---|---|
+| [SKILL.md](SKILL.md) | Agent 的任务入口与行为规则 |
+| [VERSION](VERSION) · [NOTICE.md](NOTICE.md) | 随包携带的发行版本和使用范围 |
+| [agents/](agents/) | Codex 展示信息和调用策略 |
+| [assets/](assets/) | 官方 Logo、品牌 tokens 与有状态说明的参考图 |
+| [references/](references/) | 按任务读取的叙事、设计、转换、Canva 和验收规范 |
+| [prompts/](prompts/) · [templates/](templates/) | 生成、修订、交接提示词与项目模板 |
+| [scripts/](scripts/) | 项目管理、PPTX 检查、文字一致性审计、本地安装 |
+| [tests/](tests/) | 脚本回归测试及待执行的模型行为场景 |
+| [MANIFEST.sha256](MANIFEST.sha256) | 相对本目录的文件校验清单 |
+
+常用规范：[工作流](references/workflow.md) · [转换集成](references/editable-ppt-integration.md) · [标签一致性](references/typography-consistency.md) · [现有 Canva 修订](references/canva-in-place-editing.md) · [交付验收](references/qa-and-release.md)。
+
+## 从本地包安装
+
+以下命令从本目录执行，需要 Python 3.10+：
 
 ```bash
 python scripts/install_local.py --scope user
-# 或仅当前项目
-python scripts/install_local.py --scope project --project /path/to/jjf-project
+# 仅安装到选定项目时：
+python scripts/install_local.py --scope project --project /absolute/path/to/jjf-project
 ```
 
-WSL里运行的Codex用WSL的用户目录；Windows原生运行用该Windows用户对应目录。没有命令修改`config.toml`或切换网络模式。安装后用`$jjf-external-deck`调用；未显示时重开会话。公开分发插件是另一项工作，此ZIP没有自动发布到插件市场。
-
-独立安装用户指定`image-to-editable-ppt`见`references/editable-ppt-integration.md`；本包不会静默安装远程代码。未来运行需实际图片能力；多页转换按上游要求需page workers；Canva导入需相应连接授权。
-
-## 直接交给Codex的启动语
-
-```text
-使用 $jjf-external-deck。先读SKILL.md、品牌规范和会话复盘。
-我需要JJF对外宣传Deck，面向[政府园区/企业集团/开发者/教育]。
-主题是[主题]，基于我提供的材料，不虚构人数、案例与合作角色。
-先形成内容锁和逐页视觉节奏；确认3张代表页后再扩展。
-沿用正式Logo和黑绿体系，逐页变化构图，避免办公室/绿环/卡片重复。
-图片定稿后实际调用 $image-to-editable-ppt，验收可编辑文字和独立素材。
-最终交付逐页PNG、可编辑PPTX及QA报告。[需要时：另导入新的Canva设计。]
-```
-
-## 项目辅助命令
-
-```bash
-python scripts/deckctl.py init --project ./jjf-opc
-python scripts/deckctl.py validate --project ./jjf-opc
-# 先编辑content-lock.json：每页填写精确visible_text，visible_text_status设为locked；取得真实内容审批后：
-python scripts/deckctl.py lock-content --project ./jjf-opc --evidence "本项目实际的内容审批记录"
-python scripts/deckctl.py register-preview --project ./jjf-opc --page 6 --image /absolute/path/to/actual-output.png
-python scripts/deckctl.py approve-preview --project ./jjf-opc --page 6 --reviewer user --evidence "用户明确选择本页当前版本的原话/记录" --visual-reviewed
-python scripts/deckctl.py handoff --project ./jjf-opc --pages 6
-```
-
-图片登记/批准需Pillow（`python -m pip install Pillow`；在用户允许的隔离环境）。其余管理脚本使用Python标准库。handoff只产交接包，输出`conversion_executed=false`；执行者仍须真正调用上游Skill。严禁用假审批文字运行approve。
-
-完整内容锁需审批时：编辑`content-lock.json`后执行`lock-content`并填写真实依据。该动作使受影响页的旧图片审批失效。脚本只验证哈希与字段，不能替人判断内容真实或图片美观。
-
-v1.0.2起，重新锁定只使内容发生变化的页失效；其他页的候选/批准稿保留。旧项目缺少按页哈希时，首次重新锁定保守失效，之后按页追踪。已有自动纠错授权可以作为真实依据，由delegated-design-lead验收，不伪造用户逐页批准。init和handoff同时携带原PNG与官方主SVG及其哈希；SVG不支持时仍可使用PNG。
-
-## 文件导航
-
-- `references/session-retrospective.md`：完整会话流程、成功点与失败点。
-- `references/brand-and-visual-system.md`：设计语言、Logo、字体、色彩与节奏。
-- `references/opc-storyboard.md`：OPC19页工作基线。
-- `references/narrative-and-evidence.md`：受众、叙事与事实边界。
-- `references/workflow.md`：制作/改稿/审批/交付顺序。
-- `references/editable-ppt-integration.md`：指定转换器的真实状态机与命令。
-- `references/canva-handoff.md`：新设计导入与二次验收。
-- `references/canva-in-place-editing.md`：已有Canva局部修改、品牌组件统一与非目标内容保护。
-- `assets/logo/README.md`：三种官方SVG的用途、来源与字标编辑边界。
-- `references/qa-and-release.md`：视觉、内容、编辑性验收。
-- `assets/`：官方Logo、设计tokens、带状态标签的参考缩略图。
-- `templates/`、`prompts/`：可复制项目文件与执行模板。
-- `scripts/`：版本与输入守卫、PPTX结构初筛、本地安装。
-- `tests/`：脚本测试及待执行的行为评测。
-
-## 不包含
-
-不附字体；不附内部投标报价与联系人明细；不附第三方密钥；不附上游转换器源代码；不把过去的失败稿当正式Deck。
-
-## 补充PPTX结构检查
-
-```bash
-python scripts/audit_pptx.py /path/to/edited.pptx --handoff /path/to/page_map.json --out /path/to/qa/structure.json
-```
-
-这个脚本故意不会把release_ready设为true：视觉保真、真实编辑试验、Canva验收不能由XML检查替代。测试运行使用Python 3、Pillow、python-pptx；核心审计本身只需标准库。
+安装器复制完整目录到目标 `.agents/skills/jjf-external-deck`，拒绝覆盖同名安装，不下载依赖、不修改用户设置。WSL 与原生 Windows 应在各自实际运行环境中安装。更新前先备份并比较旧版本。

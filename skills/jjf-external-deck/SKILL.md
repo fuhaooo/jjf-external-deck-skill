@@ -17,6 +17,7 @@ description: Use when creating or revising JJF AI Craft Labs external decks, OPC
 - Canva：`references/canva-handoff.md`。
 - 修改已有 Canva：另读 `references/canva-in-place-editing.md`；已有原生对象直接局部编辑，不重走生成/拆解。
 - 验收：`references/qa-and-release.md`；工具：`scripts/deckctl.py --help`。
+- 本地项目命令：`references/local-tools.md`；项目材料和输出放在 Skill 目录之外。
 
 ## 不可突破
 

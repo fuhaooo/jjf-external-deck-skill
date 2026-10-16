@@ -10,10 +10,63 @@ ROOT = Path(__file__).resolve().parents[1]
 IGNORED_DIRS = {'.git', '.venv', 'venv', '__pycache__', '.pytest_cache'}
 IGNORED_FILES = {'REPOSITORY.sha256', '.publication.json', '.DS_Store'}
 PROHIBITED_SUFFIXES = {'.pdf', '.pptx', '.ppt', '.docx', '.doc', '.xlsx', '.xls', '.ttf', '.otf', '.woff', '.woff2', '.pem', '.key'}
+VERSION_PATTERN = r'(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?'
+
+
+def read_release_version(root: Path) -> str:
+    """Read the repository's canonical version, without changing package files."""
+    version = (root / 'VERSION').read_text(encoding='utf-8').strip()
+    if not re.fullmatch(VERSION_PATTERN, version):
+        raise ValueError('VERSION must contain one semantic version, for example 1.0.4.')
+    return version
+
+
+def metadata_problems(root: Path) -> list[str]:
+    """Check current release metadata; historical changelog entries remain valid."""
+    problems = []
+    try:
+        version = read_release_version(root)
+    except (OSError, UnicodeError, ValueError) as exc:
+        return ['Cannot read canonical release version: ' + str(exc)]
+    skill = root / 'skills' / 'jjf-external-deck'
+    try:
+        copied_version = (skill / 'VERSION').read_text(encoding='utf-8').strip()
+        if copied_version != version:
+            problems.append('Skill VERSION does not match root VERSION; run scripts/sync_package_metadata.py.')
+    except (OSError, UnicodeError):
+        problems.append('Missing or unreadable skill VERSION; run scripts/sync_package_metadata.py.')
+    try:
+        if (skill / 'NOTICE.md').read_bytes() != (root / 'NOTICE.md').read_bytes():
+            problems.append('Skill NOTICE.md does not match root NOTICE.md; run scripts/sync_package_metadata.py.')
+    except OSError:
+        problems.append('Missing or unreadable root/skill NOTICE.md; review rights and sync package metadata.')
+    for path in [root / 'README.md', root / 'README.en.md', skill / 'README.md']:
+        name = path.relative_to(root).as_posix()
+        try:
+            text = path.read_text(encoding='utf-8')
+        except (OSError, UnicodeError):
+            problems.append('Missing or unreadable package overview: ' + name)
+            continue
+        # Only the current product title is checked: dated history and migration
+        # notes may correctly mention earlier releases.
+        for title in re.findall(r'^# (.+)$', text, re.MULTILINE):
+            for stated in re.findall(r'(?<![\w.])v?(' + VERSION_PATTERN + r')(?![\w.])', title):
+                if stated != version:
+                    problems.append(f'Stale release version in {name} title: {stated}; current is {version}.')
+    for path in [root / 'docs' / 'verification-report.json', skill / 'tests' / 'verification-report.json']:
+        name = path.relative_to(root).as_posix()
+        try:
+            report = json.loads(path.read_text(encoding='utf-8'))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            problems.append('Missing or invalid current verification report: ' + name)
+            continue
+        if not isinstance(report, dict) or report.get('version') != version:
+            problems.append(f'Verification report version does not match root VERSION: {name}.')
+    return problems
 
 
 def main():
-    problems = []
+    problems = metadata_problems(ROOT)
     manifest = ROOT / 'REPOSITORY.sha256'
     if not manifest.is_file():
         print('Missing REPOSITORY.sha256', file=sys.stderr)
@@ -65,7 +118,7 @@ def main():
     if problems:
         print('\n'.join(problems), file=sys.stderr)
         return 2
-    print(f'PASS: {len(actual)} reviewed files; hashes match; skill layout and official logo verified.')
+    print(f'PASS: {len(actual)} reviewed files; hashes match; package metadata, skill layout and official logo verified.')
     print('This is not a complete security audit or an image/PPT/Canva quality guarantee.')
     return 0
 

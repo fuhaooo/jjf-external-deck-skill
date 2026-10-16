@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.4 — 2026-10-16
+
+- Reorganize the repository and installable-package navigation; remove the stale v1.0.1 package title and obsolete ZIP/local-only status.
+- Keep the existing skill discovery path and move detailed project commands into references/local-tools.md; keep project data outside the installed package.
+- Make root VERSION and NOTICE the canonical metadata, with byte-preserved copies inside the standalone skill and an explicit synchronization helper.
+- Reject mismatched package versions, stale overview titles, rights metadata and verification-report versions before publication.
+- Add nine release-metadata regression tests and verify that a clean local installation includes the same version and refuses overwrites.
+
 ## 1.0.3 — 2026-10-16
 
 - Add a shared typography contract for repeated page, chapter, website and service labels; preserve intentional cover hierarchy and explicit project references.

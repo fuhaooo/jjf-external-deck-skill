@@ -1,12 +1,12 @@
 {
   "checked_on": "2026-10-16",
   "skill_name": "jjf-external-deck",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "unit_tests": {
     "count": 43,
     "passed": 43,
     "failed": 0,
-    "log": "../../../docs/core-test-results.txt"
+    "log": "test-results.txt"
   },
   "static_checks": {
     "frontmatter": true,
@@ -20,7 +20,9 @@
   "local_install_smoke": {
     "temporary_project_only": true,
     "copy_succeeded": true,
-    "overwrite_blocked": true
+    "overwrite_blocked": true,
+    "version_and_notice_match_root": true,
+    "standalone_overview_links_checked": 28
   },
   "new_agent_behavioral_tests": "18_ORIGINAL_CASES_NOT_RUN",
   "upstream_live_conversion": "NOT_RUN",
@@ -33,5 +35,10 @@
     "automatic_font_extraction": false,
     "unknown_measurements_do_not_pass": true
   },
-  "typography_readonly_scenario": "PERFORMED_NO_EXTERNAL_ACTIONS"
+  "typography_readonly_scenario": "PERFORMED_NO_EXTERNAL_ACTIONS",
+  "release_metadata_tests": {
+    "scope": "Repository-level tests, not bundled core tests",
+    "passed": 9,
+    "total": 9
+  }
 }

@@ -5,14 +5,18 @@
   },
   "publication": {
     "exit_code": 0,
-    "passed": 11
+    "passed": 20
   },
   "relative_links": {
     "passed": true
   },
   "temporary_project_install": {
     "passed": true,
+    "version": "1.0.4",
     "refuses_overwrite": true,
+    "files_unchanged_on_refusal": true,
+    "standalone_overview_links_checked": 28,
+    "canonical_notice_matches": true,
     "official_svg_files": 3
   },
   "remote_github": {
@@ -29,7 +33,7 @@
     "Pillow": "12.3.0",
     "python-pptx": "1.0.2"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "skill_format": {
     "passed": true,
     "python_utf8_required_on_windows": true
@@ -57,5 +61,15 @@
       "nonpositive dimensions"
     ]
   },
-  "prior_asset_and_install_checks": "Retained v1.0.2 evidence; not rerun for this text-only update"
+  "prior_asset_and_install_checks": "SVG visual evidence retained from v1.0.2; local installation repeated for v1.0.4",
+  "release_metadata_tests": {
+    "passed": 9,
+    "total": 9,
+    "canonical_version": "VERSION",
+    "sync_copies": [
+      "skills/jjf-external-deck/VERSION",
+      "skills/jjf-external-deck/NOTICE.md"
+    ],
+    "rejects_stale_overview_title": true
+  }
 }

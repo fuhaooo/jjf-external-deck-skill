@@ -4,6 +4,8 @@
 
 [中文 README](README.md)
 
+[Release version](VERSION) · [Changelog](CHANGELOG.md) · [Installable package](skills/jjf-external-deck/README.md) · [Maintainer docs](docs/README.md)
+
 A brand-specific Agent Skill for JJF AI Craft Labs external presentations: company introductions, OPC ecosystem proposals, enterprise FDE, AI training, developer communities and international events.
 
 **One brand system, not one repeated template.** This repository provides instructions, assets, prompts, version-management helpers and quality gates. It is not a standalone image generator, a slide-conversion engine or a finished editable deck.
@@ -67,7 +69,9 @@ python -m unittest discover -s tests -v
 python scripts/check_release.py
 ```
 
-There are 43 core tests and 11 offline publication-safety tests. These do not prove agent compliance, live image conversion, visual quality or Canva fidelity. See [verification scope](docs/VERIFICATION.md).
+There are 43 core tests and 20 offline publication/version-consistency tests. These do not prove agent compliance, live image conversion, visual quality or Canva fidelity. See [verification scope](docs/VERIFICATION.md).
+
+The root VERSION is canonical. The installable skill includes a synchronized VERSION and NOTICE; release checks reject version drift, stale overview titles and mismatched current verification reports. Detailed package-local commands live in [local-tools.md](skills/jjf-external-deck/references/local-tools.md), while repository installation and maintenance stay in the top-level documentation.
 
 ## Brand, data and rights
 
