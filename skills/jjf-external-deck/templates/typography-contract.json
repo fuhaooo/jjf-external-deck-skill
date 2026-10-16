@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "coordinate_canvas_px": [1920, 1080],
+  "notice": "Proposed starting values, not approved VI. Replace with the chosen project reference and real target page IDs. Empty expected_pages keeps the audit unknown. Inventory requires measured text; add font_family_cjk to any role whose actual label contains CJK characters. Font size, line height and box dimensions must be positive.",
+  "roles": {
+    "page_footer": {
+      "expected_pages": [],
+      "style": {"font_family_latin": "Arial", "font_family_cjk": "Microsoft YaHei", "font_size_px": 22, "font_weight": "normal", "letter_spacing_px": 0, "line_height": 1.1, "text_align": "start", "color": "#FFFFFF"},
+      "box": {"x": 48, "y": 1010, "height": 30},
+      "tolerances": {"font_size_px": 0.5, "letter_spacing_px": 0.1, "line_height": 0.03, "box_px": 3}
+    },
+    "website_footer": {
+      "expected_pages": [],
+      "style": {"font_family_latin": "Arial", "font_size_px": 26, "font_weight": "normal", "letter_spacing_px": 0, "line_height": 1.1, "text_align": "end", "color": "#FFFFFF"},
+      "box": {"x": 1610, "y": 1008, "width": 262, "height": 34},
+      "tolerances": {"font_size_px": 0.5, "letter_spacing_px": 0.1, "line_height": 0.03, "box_px": 3}
+    },
+    "service_footer": {
+      "expected_pages": [],
+      "style": {"font_family_latin": "Arial", "font_family_cjk": "Microsoft YaHei", "font_size_px": 22, "font_weight": "normal", "letter_spacing_px": 0, "line_height": 1.1, "text_align": "center", "color": "#FFFFFF"},
+      "box": {"x": 600, "y": 1010, "width": 720, "height": 30},
+      "tolerances": {"font_size_px": 0.5, "letter_spacing_px": 0.1, "line_height": 0.03, "box_px": 3}
+    },
+    "chapter_eyebrow": {
+      "expected_pages": [],
+      "style": {"font_family_latin": "Arial", "font_size_px": 20, "font_weight": "normal", "letter_spacing_px": 2, "line_height": 1.1, "text_align": "end", "color": "#FFFFFF"},
+      "box": {"x": 1460, "y": 48, "width": 412, "height": 30},
+      "tolerances": {"font_size_px": 0.5, "letter_spacing_px": 0.1, "line_height": 0.03, "box_px": 3}
+    }
+  }
+}

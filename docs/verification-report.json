@@ -1,7 +1,7 @@
 {
   "core": {
     "exit_code": 0,
-    "passed": 25
+    "passed": 43
   },
   "publication": {
     "exit_code": 0,
@@ -29,7 +29,7 @@
     "Pillow": "12.3.0",
     "python-pptx": "1.0.2"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "skill_format": {
     "passed": true,
     "python_utf8_required_on_windows": true
@@ -41,5 +41,21 @@
   "independent_readonly_scenario": {
     "performed": true,
     "live_canva_edits": false
-  }
+  },
+  "typography_tests": {
+    "passed": 18,
+    "total": 18,
+    "requires_real_inventory": true,
+    "automatically_extracts_canva_or_pptx_fonts": false
+  },
+  "typography_readonly_review": {
+    "performed": true,
+    "live_canva_edits": false,
+    "findings_fixed": [
+      "CJK font coverage",
+      "missing color",
+      "nonpositive dimensions"
+    ]
+  },
+  "prior_asset_and_install_checks": "Retained v1.0.2 evidence; not rerun for this text-only update"
 }

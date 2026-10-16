@@ -13,6 +13,7 @@ description: Use when creating or revising JJF AI Craft Labs external decks, OPC
 - OPC 新项目：`references/opc-storyboard.md`、`templates/opc19-content-lock.json`。
 - 其他 JJF 介绍：`references/narrative-and-evidence.md`、`references/narrative-presets.md`；不强制套 OPC 19 页。
 - 定稿转可编辑：`references/editable-ppt-integration.md`。
+- 拆解、组装及跨页标签修订：`references/typography-consistency.md`；先建立同角色文字合同，不能照抄 AI 原图的字体漂移。
 - Canva：`references/canva-handoff.md`。
 - 修改已有 Canva：另读 `references/canva-in-place-editing.md`；已有原生对象直接局部编辑，不重走生成/拆解。
 - 验收：`references/qa-and-release.md`；工具：`scripts/deckctl.py --help`。
@@ -40,7 +41,7 @@ description: Use when creating or revising JJF AI Craft Labs external decks, OPC
 
 **D 图片验收**：核对内容锁、Logo、中文、可读性、视觉焦点、相邻页差异；正确后才能展示/批准。阶段仅为 `preview-approved`，不宣称可编辑完成。
 
-**E 工程收尾**：对批准的整页图片，必须读取并实际调用用户指定 `$image-to-editable-ppt`；按其安装版本的状态机执行，不能只写一句提示词代替运行。先做代表页试转换，再批量。已有原生层可直接组装，不为形式而栅格化再 OCR；记录 `native-direct` 与跳过图片转换的依据。具体命令与边界见集成规范。
+**E 工程收尾**：对批准的整页图片，必须读取并实际调用用户指定 `$image-to-editable-ppt`；按其安装版本的状态机执行，不能只写一句提示词代替运行。先锁定页码、章节、网址、底部说明等语义角色的中英文字体、字号/字重、字距/行距及锚点，把同一合同交给所有 workers；组装后按角色横向验收，不保留 AI 生图的字体缺陷。先做代表页试转换，再批量。已有原生层可直接组装，不为形式而栅格化再 OCR；记录 `native-direct` 与跳过图片转换的依据。具体命令与边界见集成规范。
 
 **F 最终交付**：检查原生文本、独立资产、来源、PPTX结构、渲染与实际编辑；新制 Deck 默认导入新的 Canva 设计。用户明确要求修改指定原设计时，按局部编辑规范备份、编辑、保存及回读原设计。返回最终文件/原设计链接、明确的可编辑边界、验收结果及未完成项；不显示调试过程充当设计成品。
 

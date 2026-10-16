@@ -11,6 +11,6 @@ test_valid_repo_identity (test_publication.PublicationTests.test_valid_repo_iden
 test_visibility_is_explicit (test_publication.PublicationTests.test_visibility_is_explicit) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 1.567s
+Ran 11 tests in 0.218s
 
 OK

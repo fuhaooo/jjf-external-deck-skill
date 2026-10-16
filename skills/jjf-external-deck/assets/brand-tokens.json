@@ -56,7 +56,15 @@
       18,
       22
     ],
-    "fonts_bundled": false
+    "fonts_bundled": false,
+    "repeated_role_contract": {
+      "template": "templates/typography-contract.json",
+      "roles": ["page_footer", "website_footer", "service_footer", "chapter_eyebrow"],
+      "source_priority": "Explicit user reference, then chosen project reference, then proposed template defaults.",
+      "native_text_required": true,
+      "missing_measurement_status": "unknown",
+      "cover_hierarchy": "Use a separate documented role for intentional cover differences."
+    }
   },
   "header_lockup": {
     "status": "Production default; an explicit project reference overrides these values.",

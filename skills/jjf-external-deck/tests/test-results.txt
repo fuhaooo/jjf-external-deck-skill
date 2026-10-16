@@ -4,6 +4,8 @@ test_invalid_zip (test_audit.AuditTests.test_invalid_zip) ... ok
 test_mapping_and_parity (test_audit.AuditTests.test_mapping_and_parity) ... ok
 test_missing_text_fails_parity (test_audit.AuditTests.test_missing_text_fails_parity) ... ok
 test_native_text_passes_structure_only (test_audit.AuditTests.test_native_text_passes_structure_only) ... ok
+test_monochrome_variants_keep_the_primary_glyph_geometry (test_brand_assets.BrandAssetTests.test_monochrome_variants_keep_the_primary_glyph_geometry) ... ok
+test_official_vectors_are_intact_and_self_contained (test_brand_assets.BrandAssetTests.test_official_vectors_are_intact_and_self_contained) ... ok
 test_approval_and_handoff_preserve_mapping (test_deckctl.DeckTests.test_approval_and_handoff_preserve_mapping) ... ok
 test_approval_requires_visual_review (test_deckctl.DeckTests.test_approval_requires_visual_review) ... ok
 test_canonical_six_seven_topics (test_deckctl.DeckTests.test_canonical_six_seven_topics) ... ok
@@ -11,14 +13,36 @@ test_changed_approved_image_fails_hash (test_deckctl.DeckTests.test_changed_appr
 test_content_drift_fails (test_deckctl.DeckTests.test_content_drift_fails) ... ok
 test_draft_validation (test_deckctl.DeckTests.test_draft_validation) ... ok
 test_init_does_not_overwrite (test_deckctl.DeckTests.test_init_does_not_overwrite) ... ok
+test_legacy_relock_does_not_invent_per_page_approval (test_deckctl.DeckTests.test_legacy_relock_does_not_invent_per_page_approval) ... ok
 test_missing_approvals_blocks_handoff (test_deckctl.DeckTests.test_missing_approvals_blocks_handoff) ... ok
 test_missing_image_rejected (test_deckctl.DeckTests.test_missing_image_rejected) ... ok
 test_new_candidate_does_not_replace_approved (test_deckctl.DeckTests.test_new_candidate_does_not_replace_approved) ... ok
 test_no_fonts_in_package (test_deckctl.DeckTests.test_no_fonts_in_package) ... ok
+test_one_page_content_fix_preserves_other_approved_page (test_deckctl.DeckTests.test_one_page_content_fix_preserves_other_approved_page) ... ok
 test_preview_revision_is_unique (test_deckctl.DeckTests.test_preview_revision_is_unique) ... ok
+test_relocking_identical_content_keeps_approved_previews (test_deckctl.DeckTests.test_relocking_identical_content_keeps_approved_previews) ... ok
 test_unknown_approval_rejected (test_deckctl.DeckTests.test_unknown_approval_rejected) ... ok
+test_vector_logo_handoff_and_tamper_detection (test_deckctl.DeckTests.test_vector_logo_handoff_and_tamper_detection) ... ok
+test_chinese_requires_contract_and_observed_cjk_font (test_typography.TypographyTests.test_chinese_requires_contract_and_observed_cjk_font) ... ok
+test_different_canvas_normalizes_geometry_and_font_pixels (test_typography.TypographyTests.test_different_canvas_normalizes_geometry_and_font_pixels) ... ok
+test_distorted_canvas_fails (test_typography.TypographyTests.test_distorted_canvas_fails) ... ok
+test_family_drift_fails_even_when_size_matches (test_typography.TypographyTests.test_family_drift_fails_even_when_size_matches) ... ok
+test_geometry_drift_fails (test_typography.TypographyTests.test_geometry_drift_fails) ... ok
+test_intentional_cover_role_can_have_different_hierarchy (test_typography.TypographyTests.test_intentional_cover_role_can_have_different_hierarchy) ... ok
+test_latin_only_website_does_not_require_cjk_font (test_typography.TypographyTests.test_latin_only_website_does_not_require_cjk_font) ... ok
+test_missing_color_contract_cannot_pass (test_typography.TypographyTests.test_missing_color_contract_cannot_pass) ... ok
+test_missing_expected_page_and_duplicate_footer_fail (test_typography.TypographyTests.test_missing_expected_page_and_duplicate_footer_fail) ... ok
+test_missing_measured_text_cannot_pass_script_coverage (test_typography.TypographyTests.test_missing_measured_text_cannot_pass_script_coverage) ... ok
+test_missing_observed_color_cannot_pass (test_typography.TypographyTests.test_missing_observed_color_cannot_pass) ... ok
+test_missing_or_inherited_font_is_unknown_not_pass (test_typography.TypographyTests.test_missing_or_inherited_font_is_unknown_not_pass) ... ok
+test_missing_scope_and_measurement_cannot_pass (test_typography.TypographyTests.test_missing_scope_and_measurement_cannot_pass) ... ok
+test_mixed_same_script_families_fail (test_typography.TypographyTests.test_mixed_same_script_families_fail) ... ok
+test_nonfinite_measurement_is_rejected (test_typography.TypographyTests.test_nonfinite_measurement_is_rejected) ... ok
+test_nonpositive_sizes_are_invalid_in_contract_and_measurement (test_typography.TypographyTests.test_nonpositive_sizes_are_invalid_in_contract_and_measurement) ... ok
+test_outlined_or_raster_text_does_not_pass_editability (test_typography.TypographyTests.test_outlined_or_raster_text_does_not_pass_editability) ... ok
+test_same_role_measured_styles_pass (test_typography.TypographyTests.test_same_role_measured_styles_pass) ... ok
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.457s
+Ran 43 tests in 2.244s
 
 OK

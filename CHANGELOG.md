@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3 — 2026-10-16
+
+- Add a shared typography contract for repeated page, chapter, website and service labels; preserve intentional cover hierarchy and explicit project references.
+- Require normalization after image reconstruction and Canva assembly instead of copying AI-generated font drift.
+- Add a standard-library audit of measured role inventories: font families, size, weight, spacing, alignment, normalized geometry, coverage and native-text status. Missing properties remain unknown.
+- Document Canva font-family/letter-spacing limitations and preserve native labels when those controls are unavailable.
+- Add 18 typography regression tests and a read-only independent scenario review. This does not establish live font-family normalization or full conversion fidelity.
+
 ## 1.0.2 — 2026-10-16
 
 - Add three byte-preserved official SVG logos: primary, transparent white and white on black; retain the original PNG fallback and record source hashes.

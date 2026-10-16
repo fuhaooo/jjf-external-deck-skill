@@ -37,6 +37,12 @@ JJF 综合品牌介绍、面向政府／园区／集团的 OPC 生态合作方�
 
 *编辑式三联画是正向审美参考之一，不是全套固定模板。上图是历史 AI 生成示意，不证明真实活动、客户或空间；其中旧 Logo 和文字不能作为最终资产或事实母版。正式图标首选 `assets/logo/jjf-logo-primary.svg`，不支持SVG时用原PNG。更多正例、候选与反例见 [参考图索引](skills/jjf-external-deck/assets/references/index.json)。*
 
+## v1.0.3：拆解后的标签一致性
+
+拆解后按语义角色统一页码、章节、网址、底部说明的中英文字体、字号、字重、间距和锚点，不照抄 AI 生图的字体缺陷。所有页面 worker 共用一份[文字样式合同](skills/jjf-external-deck/templates/typography-contract.json)，组装及 Canva 保存后分别验收；封面层级和用户指定参考优先。
+
+新增[文字一致性审计](skills/jjf-external-deck/references/typography-consistency.md)：检查真实提取的属性，缺字体信息返回 unknown。Canva 接口未开放字体家族或字距时，不能宣称已经统一，也不能静默把原生文字换成图片。
+
 ## v1.0.2 补强
 
 - 收录三种官方SVG：绿色主标、透明白标、黑底白标，并保留原PNG兼容版；[查看用途与来源](skills/jjf-external-deck/assets/logo/README.md)。
@@ -251,7 +257,7 @@ python -m unittest discover -s tests -v
 python scripts/check_release.py
 ```
 
-当前分发包包含 25 项核心脚本/品牌资产测试和 11 项离线发布保护测试；本地结果见 [验证说明](docs/VERIFICATION.md)。
+当前分发包包含 43 项核心脚本/品牌资产/文字一致性测试和 11 项离线发布保护测试；本地结果见 [验证说明](docs/VERIFICATION.md)。
 
 **尚未作为本版本端到端测试完成：**新 Agent 会话行为回归、真实 19 页转换、各 Agent 全功能兼容性、Canva 导入保真。单元测试通过不等于图片审美或外部服务链路通过；本仓库也不是已经制作完成的可编辑 Deck。
 

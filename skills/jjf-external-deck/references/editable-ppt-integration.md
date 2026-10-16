@@ -37,6 +37,8 @@ JJF `handoff`输出包含排序后的源图片绝对路径、JJF原页号与转�
 
 单页修第6页：转换Skill得到1页输入时会称它`page_001`，JJF仍是`p006`。必须通过page_map保存这一映射，不要把其页脚改成“第1页”。
 
+拆解前另读 `typography-consistency.md`：父 agent 先按参考页确定 `typography-contract.json`，和文字锁一起交给每个 worker；页脚、网址、章节、底部说明同角色采用同一实测样式。原图字体漂移属于需修正的缺陷。组装后提取实测清单运行 `audit_typography.py`，字体属性无法读取时报告 unknown，不凭截图或预设值宣称全部统一。
+
 ## 实际工作流，不是只写提示词
 
 ```text

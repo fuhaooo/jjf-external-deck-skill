@@ -52,6 +52,8 @@ Text should be native text boxes, simple diagrams native shapes, and complex ima
 
 Canva requires separate access and post-import validation. Conversion and API costs, availability and fidelity are not guaranteed.
 
+Repeated page, chapter, website and service labels share a project [typography contract](skills/jjf-external-deck/templates/typography-contract.json). Normalize these native text roles after reconstruction and assembly instead of reproducing AI-generated font drift; preserve intentional cover hierarchy and explicit references. The [measured-inventory audit](skills/jjf-external-deck/references/typography-consistency.md) reports missing font properties as unknown. Canva interfaces without font-family or letter-spacing controls cannot establish full font consistency, and native labels must not silently become outlined graphics.
+
 ## Python helpers and tests
 
 Only install Python dependencies when using the relevant helpers:
@@ -65,7 +67,7 @@ python -m unittest discover -s tests -v
 python scripts/check_release.py
 ```
 
-There are 25 core tests and 11 offline publication-safety tests. These do not prove agent compliance, live image conversion, visual quality or Canva fidelity. See [verification scope](docs/VERIFICATION.md).
+There are 43 core tests and 11 offline publication-safety tests. These do not prove agent compliance, live image conversion, visual quality or Canva fidelity. See [verification scope](docs/VERIFICATION.md).
 
 ## Brand, data and rights
 
