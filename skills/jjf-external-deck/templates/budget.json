@@ -1,0 +1,21 @@
+{
+  "status": "proposed_not_authorized",
+  "generation": {
+    "max_new_images_per_page": 2,
+    "max_local_fix_rounds": 2
+  },
+  "conversion": {
+    "pilot_source_pages": [
+      6,
+      13,
+      15
+    ],
+    "max_concurrent_pages": 2,
+    "max_repair_rounds": 2
+  },
+  "spend_limit": null,
+  "allow_external_ocr": false,
+  "allow_external_image_api": false,
+  "allow_canva_import": false,
+  "notice": "Defaults are conservative planning suggestions, not user authorization; missing tool flags must not be invented."
+}

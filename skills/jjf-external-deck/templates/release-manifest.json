@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "deck_id": "TO_FILL",
+  "release_id": "TO_FILL",
+  "content_sha256": "TO_FILL",
+  "editable_pptx": null,
+  "conversion_route": null,
+  "conversion_run": null,
+  "upstream_validation": null,
+  "jjf_qa": {
+    "content_parity": false,
+    "brand": false,
+    "visual_rhythm": false,
+    "edit_smoke_test": false
+  },
+  "canva": {
+    "requested": false,
+    "design_id": null,
+    "edit_url": null,
+    "verified": false
+  },
+  "limitations": [],
+  "status": "not_released"
+}

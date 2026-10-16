@@ -1,0 +1,43 @@
+{
+  "source": "User-provided official JJF logo in this conversation",
+  "source_filename": "jjf-transparent(2).png",
+  "master_file": "jjf-logo-master.png",
+  "sha256": "243e55415d6fcd471dac357318ff9ff827f3e365564fff375d819b3f922699b9",
+  "width": 2048,
+  "height": 2048,
+  "mode": "RGBA",
+  "sampled_dominant_opaque_colors": [
+    "#22C55E",
+    "#199446",
+    "#FFFFFF"
+  ],
+  "color_status": "Sampled from supplied raster; not a separately approved print/Pantone specification.",
+  "usage": "Prefer jjf-logo-primary.svg for vector-capable targets; keep this original PNG as compatibility fallback. Preserve geometry, transparency and shadow. Do not redraw with AI.",
+  "vectors": [
+    {
+      "file": "jjf-logo-primary.svg",
+      "source_filename": "jjf-v2.svg",
+      "source": "User-provided official JJF materials directory",
+      "sha256": "f93ea2ef3677a456d53a6034493a1ae08ffe9e903964e3d9b6c8089442f72a9a",
+      "view_box": "0 0 2048 2048",
+      "usage": "Default green rounded-square brand icon; copied byte-for-byte."
+    },
+    {
+      "file": "jjf-logo-white.svg",
+      "source_filename": "JJF_logo_white_transparent.svg",
+      "source": "User-provided official JJF materials directory",
+      "sha256": "9912a1c40c376ce60029529782a0696788cfad146951466056a749c5d5c25b56",
+      "view_box": "0 0 2048 2048",
+      "usage": "White glyph on transparent square canvas; dark-background watermark."
+    },
+    {
+      "file": "jjf-logo-white-on-black.svg",
+      "source_filename": "JJF_logo_reversed_white_black_bg.svg",
+      "source": "User-provided official JJF materials directory",
+      "sha256": "595ce421aa41458331c8597255f6b349f8f4af4e2e86f26f32ad49169620412b",
+      "view_box": "0 0 2048 2048",
+      "usage": "White glyph on opaque black background; explicit monochrome option."
+    }
+  ],
+  "rights": "User-supplied brand asset; package is for JJF authorized use; not a public brand license."
+}

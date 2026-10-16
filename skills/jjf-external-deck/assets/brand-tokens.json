@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "brand": "JJF AI Craft Labs",
+  "cn_name": "中国 · 厦门 JJF AI造物实验室",
+  "logo": "assets/logo/jjf-logo-master.png",
+  "logo_vector": "assets/logo/jjf-logo-primary.svg",
+  "logo_vector_sha256": "f93ea2ef3677a456d53a6034493a1ae08ffe9e903964e3d9b6c8089442f72a9a",
+  "logo_sha256": "243e55415d6fcd471dac357318ff9ff827f3e365564fff375d819b3f922699b9",
+  "palette": {
+    "brand_green": "#22C55E",
+    "logo_shadow_green": "#199446",
+    "canvas": "#080D0B",
+    "surface": "#101813",
+    "text": "#F2F5F1",
+    "muted": "#A8B2AA",
+    "rule": "#29382E",
+    "highlight_green": "#55E889"
+  },
+  "provenance": {
+    "brand_green": "measured from the supplied logo",
+    "logo_shadow_green": "measured from the supplied logo",
+    "other_colors": "proposed production defaults distilled from conversation; not original approved VI values"
+  },
+  "canvas": {
+    "ratio": "16:9",
+    "preview_px": [
+      1920,
+      1080
+    ],
+    "pptx_inches": [
+      13.333333,
+      7.5
+    ],
+    "safe_margin_px": 72
+  },
+  "typography": {
+    "cn_preferred": [
+      "Noto Sans CJK SC",
+      "Source Han Sans SC",
+      "Microsoft YaHei"
+    ],
+    "latin_preferred": [
+      "Inter",
+      "Aptos",
+      "Arial"
+    ],
+    "title_px": [
+      60,
+      88
+    ],
+    "body_px": [
+      26,
+      34
+    ],
+    "caption_px": [
+      18,
+      22
+    ],
+    "fonts_bundled": false
+  },
+  "header_lockup": {
+    "status": "Production default; an explicit project reference overrides these values.",
+    "coordinate_canvas_px": [1920, 1080],
+    "symbol": {"x": 44, "y": 37, "width": 83, "height": 83},
+    "english": {
+      "text": "AI Craft Labs",
+      "x": 142, "y": 38, "font_px": 44, "weight": "bold",
+      "runs": [{"text": "AI Craft ", "color": "#FFFFFF"}, {"text": "Labs", "color": "#22C55E"}]
+    },
+    "chinese": {"text": "中国·厦门 JJF AI 造物实验室", "x": 142, "y": 94, "font_px": 20, "color": "#FFFFFF"},
+    "text_editability": "Prefer native text. Outlined wordmarks are scalable graphics, not character-editable text.",
+    "scaling": "Scale all positions and sizes together; keep symbol aspect ratio and render-check the nearest title."
+  },
+  "composition": {
+    "max_primary_visuals": 1,
+    "recommended_negative_space_fraction": [
+      0.25,
+      0.4
+    ],
+    "green_emphasis_fraction_max": 0.15,
+    "avoid_consecutive_same_visual_family": true
+  },
+  "notice": "All numeric layout thresholds are design heuristics for this skill, not historical facts or universal standards."
+}

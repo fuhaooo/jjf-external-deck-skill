@@ -1,0 +1,101 @@
+[
+  {
+    "id": "positive-p15-editorial-triptych",
+    "file": "assets/references/positive-p15-editorial-triptych.jpg",
+    "source_filename": "a_wide_cinematic_presentation_slide_poster_styl.png",
+    "source_sha256": "377f8a0422bad248a419b7c3677c3efd3d2e25e0a960d0cf031102e911331f0e",
+    "reference_sha256": "d50eae22c9b1daff7e22ae9a34c9408d86dc13708646e1a26a8549229ac0a520",
+    "status": "explicit_positive_feedback",
+    "approval_basis": "用户紧接第15页回复“可以可以，这就很好”",
+    "use_limit": "只参考三联画/层级/留白；图中活动/硬件/人物为生成示意，Logo非当前master，不当事实",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "candidate-p12-space-cutaway",
+    "file": "assets/references/candidate-p12-space-cutaway.jpg",
+    "source_filename": "ai造物实验室_空间即运营场景.png",
+    "source_sha256": "fcf6614a23d7eda04f795330cd23c2e543b57ec377815cb881a62b027c8603a7",
+    "reference_sha256": "be38e95580a4d27c0fe1a2f42ed4f9e0537477bb16c911b5ea9a8c2ddbefdb3f",
+    "status": "candidate_not_explicitly_approved",
+    "approval_basis": "历史生成稿，用户继续下一页不等于验收",
+    "use_limit": "参考轴测构图；面积容量须另核，空间未证明建成",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "candidate-p16-runway",
+    "file": "assets/references/candidate-p16-runway.jpg",
+    "source_filename": "wide_cinematic_dark_sci_fi_tech_presentation_slide.png",
+    "source_sha256": "bcbb758b8678708ac6bb7d401824d778a7a8143a64fa43bd18c3bb7f5e4c4836",
+    "reference_sha256": "55550e52f1039617cb707fbbface63d773e4cde13e607d23ea6a3261e734da19",
+    "status": "candidate_not_explicitly_approved",
+    "approval_basis": "历史生成稿",
+    "use_limit": "参考三阶段节奏；不复制模拟城市与无依据目标为业绩",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "candidate-p05-modular",
+    "file": "assets/references/candidate-p05-modular.jpg",
+    "source_filename": "builders驱动的opc生态平台.png",
+    "source_sha256": "457185a4eb550c7b4f66eaee6316df98a813ea822d68a28cd8d14c2b9d4a98a1",
+    "reference_sha256": "590a127bd80cfb82b6ac3941daae5d94c060dacabf8dc34ab48fe18b1a5bb893",
+    "status": "candidate_not_explicitly_approved",
+    "approval_basis": "三页重做之一，尚无独立批准",
+    "use_limit": "参考单一能力装置；避免全套都重复玻璃积木",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "candidate-p06-dark-engines",
+    "file": "assets/references/candidate-p06-dark-engines.jpg",
+    "source_filename": "霓虹双引擎增长闭环.png",
+    "source_sha256": "6415398f0cd809867b53f0a25a7ceebf0b9524d5772d94d80f7de0a3eaadf74a",
+    "reference_sha256": "849d6e0a7295cb1db1e231c8f0a5cffd845efa034687a1d09a6b728333bef5c6",
+    "status": "latest_candidate_not_approved",
+    "approval_basis": "白底第6页被纠正后的生成稿",
+    "use_limit": "仅参考深色双引擎；缺Hacker House，不可充当文字母版；星球不是必需",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "candidate-p07-path",
+    "file": "assets/references/candidate-p07-path.jpg",
+    "source_filename": "opc六步成长闭环霓虹之路.png",
+    "source_sha256": "a2d11a73a9b3b96b5d0c2107a5407b91ca6a41bd5b3dbcee594870a0fb6c8b1a",
+    "reference_sha256": "c73cca95ed842b47c83e87572e97a22edb78114a9a705779936122fa13418635",
+    "status": "candidate_not_explicitly_approved",
+    "approval_basis": "三页重做之一",
+    "use_limit": "参考顺序与视觉重心；画面需额外说明回流才能完整表达闭环",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "negative-repeated-office",
+    "file": "assets/references/negative-repeated-office.jpg",
+    "source_filename": "社区增长与联合交付引擎.png",
+    "source_sha256": "577d03e36895ad11515a2fcf8053f337b532738351fc4c5f6c323f19b743a91b",
+    "reference_sha256": "f6f23de1382347021df5167c8d8b59b2c8562ca4be265012aa5848f807438eda",
+    "status": "negative_reference",
+    "approval_basis": "用户认为5/6/7页视觉重复疲劳",
+    "use_limit": "办公室人物/白板/卡片重复；只保留主题，不复制模板",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "negative-p06-white",
+    "file": "assets/references/negative-p06-white.jpg",
+    "source_filename": "jjf_社区与联合交付增长飞轮.png",
+    "source_sha256": "ed4cc1e2a61aaaff301d8d7341dee05021913fe9eea2b7209c6d7016f8960d89",
+    "reference_sha256": "3c9b754cad843d64c4138efd113ba7855556a003b1ff9dca6898876176267023",
+    "status": "explicitly_rejected_style",
+    "approval_basis": "用户指出“第6页的风格不太对”",
+    "use_limit": "白底不作为默认黑绿体系；不因想换节奏而切白米色",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  },
+  {
+    "id": "support-p09-quiet-type",
+    "file": "assets/references/support-p09-quiet-type.jpg",
+    "source_filename": "JJF_OPC_第09页_能力加速系统_重设计.png",
+    "source_sha256": "1da5feeea02092f796234cf093477f5973be30f0a6b71522e0266793cb836170",
+    "reference_sha256": "65fd6be0b499665fd6fdba0ad45fa270f744a765e5f07b89989b2bed3b76b0b3",
+    "status": "assistant_alternative_not_approved",
+    "approval_basis": "过去代码展示补图，不等于用户批准",
+    "use_limit": "可参考可读性与留白，不强加全套纯代码模板；Logo需替换",
+    "source_type": "generated_in_conversation_not_documentary_evidence"
+  }
+]

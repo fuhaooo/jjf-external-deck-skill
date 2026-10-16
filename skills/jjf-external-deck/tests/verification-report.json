@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-16",
+  "skill_name": "jjf-external-deck",
+  "version": "1.0.2",
+  "unit_tests": {
+    "count": 25,
+    "passed": 25,
+    "failed": 0,
+    "log": "../../../docs/core-test-results.txt"
+  },
+  "static_checks": {
+    "frontmatter": true,
+    "json_parse": true,
+    "python_syntax": true,
+    "logo_master_sha256": true,
+    "nineteen_page_order": true,
+    "no_font_files": true,
+    "official_svg_provenance": true
+  },
+  "local_install_smoke": {
+    "temporary_project_only": true,
+    "copy_succeeded": true,
+    "overwrite_blocked": true
+  },
+  "new_agent_behavioral_tests": "18_ORIGINAL_CASES_NOT_RUN",
+  "upstream_live_conversion": "NOT_RUN",
+  "canva_live_import": "NOT_RUN",
+  "integration_status": "documented_not_live_tested",
+  "independent_readonly_scenario": "PERFORMED_NO_EXTERNAL_ACTIONS"
+}

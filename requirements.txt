@@ -1,0 +1,2 @@
+# Needed only by preview registration and image measurements, not to read the skill.
+Pillow>=10,<13

@@ -1,0 +1,24 @@
+test_flat_raster_fails (test_audit.AuditTests.test_flat_raster_fails) ... ok
+test_full_source_plus_overlay_fails (test_audit.AuditTests.test_full_source_plus_overlay_fails) ... ok
+test_invalid_zip (test_audit.AuditTests.test_invalid_zip) ... ok
+test_mapping_and_parity (test_audit.AuditTests.test_mapping_and_parity) ... ok
+test_missing_text_fails_parity (test_audit.AuditTests.test_missing_text_fails_parity) ... ok
+test_native_text_passes_structure_only (test_audit.AuditTests.test_native_text_passes_structure_only) ... ok
+test_approval_and_handoff_preserve_mapping (test_deckctl.DeckTests.test_approval_and_handoff_preserve_mapping) ... ok
+test_approval_requires_visual_review (test_deckctl.DeckTests.test_approval_requires_visual_review) ... ok
+test_canonical_six_seven_topics (test_deckctl.DeckTests.test_canonical_six_seven_topics) ... ok
+test_changed_approved_image_fails_hash (test_deckctl.DeckTests.test_changed_approved_image_fails_hash) ... ok
+test_content_drift_fails (test_deckctl.DeckTests.test_content_drift_fails) ... ok
+test_draft_validation (test_deckctl.DeckTests.test_draft_validation) ... ok
+test_init_does_not_overwrite (test_deckctl.DeckTests.test_init_does_not_overwrite) ... ok
+test_missing_approvals_blocks_handoff (test_deckctl.DeckTests.test_missing_approvals_blocks_handoff) ... ok
+test_missing_image_rejected (test_deckctl.DeckTests.test_missing_image_rejected) ... ok
+test_new_candidate_does_not_replace_approved (test_deckctl.DeckTests.test_new_candidate_does_not_replace_approved) ... ok
+test_no_fonts_in_package (test_deckctl.DeckTests.test_no_fonts_in_package) ... ok
+test_preview_revision_is_unique (test_deckctl.DeckTests.test_preview_revision_is_unique) ... ok
+test_unknown_approval_rejected (test_deckctl.DeckTests.test_unknown_approval_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.457s
+
+OK

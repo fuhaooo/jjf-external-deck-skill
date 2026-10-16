@@ -1,0 +1,12 @@
+{
+  "recorded_on": "2026-10-16",
+  "dependency": "image-to-editable-ppt",
+  "repository": "https://github.com/ningzimu/image-to-editable-ppt-skill",
+  "skill_subdirectory": "skills/image-to-editable-ppt",
+  "observed_main_commit": "b7be494e31a0ed56ef98716891db5474606b8cdf",
+  "observed_skill_blob_sha1": "5d4fcc0a7b9d82e9c0dea62c1c03b43a63da9b06",
+  "runtime_installed": false,
+  "live_conversion_tested": false,
+  "pin_policy": "Record actual installed commit/file hash before use; review changes rather than trusting a moving main branch.",
+  "redistributed": false
+}

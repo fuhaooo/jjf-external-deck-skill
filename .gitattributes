@@ -1,0 +1,5 @@
+# Preserve exact file bytes for provenance hashes, including on Windows.
+* -text
+*.png binary
+*.jpg binary
+*.jpeg binary

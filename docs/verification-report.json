@@ -1,0 +1,45 @@
+{
+  "core": {
+    "exit_code": 0,
+    "passed": 25
+  },
+  "publication": {
+    "exit_code": 0,
+    "passed": 11
+  },
+  "relative_links": {
+    "passed": true
+  },
+  "temporary_project_install": {
+    "passed": true,
+    "refuses_overwrite": true,
+    "official_svg_files": 3
+  },
+  "remote_github": {
+    "repository": "fuhaooo/jjf-external-deck-skill",
+    "evidence_file": ".publication.json",
+    "status": "recorded_separately_after_actual_push"
+  },
+  "upstream_live_conversion_tested": false,
+  "canva_import_tested": false,
+  "skills_cli_remote_install_tested": false,
+  "verified_on": "2026-10-16",
+  "environment": {
+    "python": "3.12.7",
+    "Pillow": "12.3.0",
+    "python-pptx": "1.0.2"
+  },
+  "version": "1.0.2",
+  "skill_format": {
+    "passed": true,
+    "python_utf8_required_on_windows": true
+  },
+  "official_svg_visual_review": {
+    "passed": true,
+    "byte_preserved": true
+  },
+  "independent_readonly_scenario": {
+    "performed": true,
+    "live_canva_edits": false
+  }
+}
